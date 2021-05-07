@@ -209,7 +209,9 @@ def seven(a, b, c):
 
 
 def eight(string,  a):
-    return ""
+    midlen = len(string)/2   # //2 in python 3
+    newstr = string[:midlen] + string[midlen+1:]
+    return newstr
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -229,7 +231,21 @@ def eight(string,  a):
 
 
 def nine(string1, string2):
-    return False
+    d, d2 = {}, {}
+    for char in string1:
+        if char not in d:
+            d[char] = 1
+        else:
+            d[char] += 1
+    for char in string2:
+        if char not in d:
+            return False
+        if char not in d2:
+            d2[char] = 1
+        else:
+            d2[char] += 1
+
+    return d == d2
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -250,6 +266,13 @@ def nine(string1, string2):
 
 
 def ten(x, y):
-    return []
+    rows, cols =(x, y)
+    arr=[]
+    for i in range(rows):
+            col = []
+            for j in range(cols):
+             col.append(0)
+            arr.append(col)
+    return(arr)
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
