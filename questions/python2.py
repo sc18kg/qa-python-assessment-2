@@ -113,7 +113,8 @@ def three(a):
 
 
 def four(string1, string2):
-    return ""
+    out1 = ''.join(''.join(f for f in tup) for tup in zip(string1, string2))
+    return out1
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -131,9 +132,10 @@ def four(string1, string2):
     # There is a module which can be used to generate random numbers, this module is called random.
     # The random module contains a function called randint.
 
-
+import random
 def five():
-    return []
+    list = [ x + (x % 2) for _ in range(5) for x in [random.randint(100 , 200)]]
+    return list
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -155,7 +157,9 @@ def five():
 
 
 def six(string):
-    return False
+    string2 = string.lower()
+    answer = string2.endswith('py')
+    return answer
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -182,6 +186,8 @@ def six(string):
 
 
 def seven(a, b, c):
+    if (a - b == b - c) or (a - c == c - b) or (a - b == c - a):
+        return True
     return False
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
